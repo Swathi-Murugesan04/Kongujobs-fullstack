@@ -1,0 +1,17 @@
+Admin API examples (use Postman/Insomnia; do not expose your admin key in browser code)
+
+List applications:
+GET https://YOUR-BACKEND-HOST/api/admin/applications
+Header: x-admin-api-key: YOUR_ADMIN_API_KEY
+
+Filter by status:
+GET https://YOUR-BACKEND-HOST/api/admin/applications?status=New&limit=100
+Header: x-admin-api-key: YOUR_ADMIN_API_KEY
+
+Update application #1:
+PATCH https://YOUR-BACKEND-HOST/api/admin/applications/1
+Header: x-admin-api-key: YOUR_ADMIN_API_KEY
+Content-Type: application/json
+Body: {"status":"Contacted"}
+
+Valid statuses: New, Contacted, Interview, Placed, Closed
